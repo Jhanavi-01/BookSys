@@ -1,0 +1,814 @@
+{
+  "common": {
+    "appName": "bookSys",
+    "nav": {
+      "home": "Trang ch\u1ee7",
+      "events": "S\u1ef1 ki\u1ec7n",
+      "myTickets": "V\u00e9 c\u1ee7a t\u00f4i",
+      "orders": "\u0110\u01a1n h\u00e0ng",
+      "profile": "T\u00e0i kho\u1ea3n",
+      "login": "\u0110\u0103ng nh\u1eadp",
+      "register": "\u0110\u0103ng k\u00fd",
+      "logout": "\u0110\u0103ng xu\u1ea5t",
+      "dashboard": "B\u1ea3ng \u0111i\u1ec1u khi\u1ec3n",
+      "manageEvents": "Qu\u1ea3n l\u00fd s\u1ef1 ki\u1ec7n",
+      "venues": "\u0110\u1ecba \u0111i\u1ec3m",
+      "reports": "B\u00e1o c\u00e1o",
+      "scanner": "Qu\u00e9t v\u00e9",
+      "users": "Ng\u01b0\u1eddi d\u00f9ng",
+      "settings": "C\u00e0i \u0111\u1eb7t",
+      "auditLog": "Nh\u1eadt k\u00fd",
+      "reconciliation": "\u0110\u1ed1i so\u00e1t"
+    },
+    "buttons": {
+      "submit": "G\u1eedi",
+      "cancel": "H\u1ee7y",
+      "save": "L\u01b0u",
+      "delete": "X\u00f3a",
+      "edit": "S\u1eeda",
+      "create": "T\u1ea1o m\u1edbi",
+      "back": "Quay l\u1ea1i",
+      "next": "Ti\u1ebfp theo",
+      "previous": "Tr\u01b0\u1edbc",
+      "confirm": "X\u00e1c nh\u1eadn",
+      "close": "\u0110\u00f3ng",
+      "search": "T\u00ecm ki\u1ebfm",
+      "filter": "L\u1ecdc",
+      "reset": "\u0110\u1eb7t l\u1ea1i",
+      "loadMore": "Xem th\u00eam",
+      "refresh": "L\u00e0m m\u1edbi",
+      "download": "T\u1ea3i xu\u1ed1ng",
+      "upload": "T\u1ea3i l\u00ean",
+      "export": "Xu\u1ea5t",
+      "viewAll": "Xem t\u1ea5t c\u1ea3",
+      "viewDetails": "Xem chi ti\u1ebft",
+      "tryAgain": "Th\u1eed l\u1ea1i",
+      "continue": "Ti\u1ebfp t\u1ee5c",
+      "apply": "\u00c1p d\u1ee5ng",
+      "share": "Chia s\u1ebb"
+    },
+    "states": {
+      "loading": "\u0110ang t\u1ea3i...",
+      "saving": "\u0110ang l\u01b0u...",
+      "processing": "\u0110ang x\u1eed l\u00fd...",
+      "noResults": "Kh\u00f4ng t\u00ecm th\u1ea5y k\u1ebft qu\u1ea3",
+      "empty": "Ch\u01b0a c\u00f3 d\u1eef li\u1ec7u",
+      "error": "\u0110\u00e3 x\u1ea3y ra l\u1ed7i",
+      "success": "Th\u00e0nh c\u00f4ng!",
+      "pending": "\u0110ang ch\u1edd",
+      "active": "Ho\u1ea1t \u0111\u1ed9ng",
+      "inactive": "Kh\u00f4ng ho\u1ea1t \u0111\u1ed9ng",
+      "enabled": "B\u1eadt",
+      "disabled": "T\u1eaft"
+    },
+    "time": {
+      "now": "V\u1eeba xong",
+      "minutesAgo": "{count} ph\u00fat tr\u01b0\u1edbc",
+      "hoursAgo": "{count} gi\u1edd tr\u01b0\u1edbc",
+      "daysAgo": "{count} ng\u00e0y tr\u01b0\u1edbc",
+      "seconds": "gi\u00e2y",
+      "minutes": "ph\u00fat",
+      "hours": "gi\u1edd",
+      "days": "ng\u00e0y"
+    },
+    "currency": {
+      "vnd": "VN\u0110",
+      "symbol": "\u0111"
+    },
+    "language": {
+      "en": "Ti\u1ebfng Anh",
+      "vi": "Ti\u1ebfng Vi\u1ec7t",
+      "switchTo": "Chuy\u1ec3n ng\u00f4n ng\u1eef"
+    },
+    "pagination": {
+      "showing": "Hi\u1ec3n th\u1ecb {from} \u0111\u1ebfn {to} trong t\u1ed5ng s\u1ed1 {total}",
+      "page": "Trang {current} / {total}",
+      "perPage": "M\u1ed7i trang"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Ch\u00e0o m\u1eebng tr\u1edf l\u1ea1i",
+      "subtitle": "\u0110\u0103ng nh\u1eadp v\u00e0o t\u00e0i kho\u1ea3n c\u1ee7a b\u1ea1n",
+      "email": "\u0110\u1ecba ch\u1ec9 email",
+      "password": "M\u1eadt kh\u1ea9u",
+      "rememberMe": "Ghi nh\u1edb \u0111\u0103ng nh\u1eadp",
+      "forgotPassword": "Qu\u00ean m\u1eadt kh\u1ea9u?",
+      "submit": "\u0110\u0103ng nh\u1eadp",
+      "noAccount": "Ch\u01b0a c\u00f3 t\u00e0i kho\u1ea3n?",
+      "signUp": "\u0110\u0103ng k\u00fd",
+      "locked": "T\u00e0i kho\u1ea3n c\u1ee7a b\u1ea1n \u0111\u00e3 b\u1ecb kh\u00f3a t\u1ea1m th\u1eddi do qu\u00e1 nhi\u1ec1u l\u1ea7n \u0111\u0103ng nh\u1eadp th\u1ea5t b\u1ea1i. Vui l\u00f2ng th\u1eed l\u1ea1i sau.",
+      "invalid": "Email ho\u1eb7c m\u1eadt kh\u1ea9u kh\u00f4ng \u0111\u00fang"
+    },
+    "register": {
+      "title": "T\u1ea1o t\u00e0i kho\u1ea3n",
+      "subtitle": "Tham gia bookSys \u0111\u1ec3 kh\u00e1m ph\u00e1 s\u1ef1 ki\u1ec7n",
+      "firstName": "T\u00ean",
+      "lastName": "H\u1ecd",
+      "email": "\u0110\u1ecba ch\u1ec9 email",
+      "password": "M\u1eadt kh\u1ea9u",
+      "confirmPassword": "X\u00e1c nh\u1eadn m\u1eadt kh\u1ea9u",
+      "agreeTerms": "T\u00f4i \u0111\u1ed3ng \u00fd v\u1edbi \u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5 v\u00e0 Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt",
+      "agreePrefix": "T\u00f4i \u0111\u1ed3ng \u00fd v\u1edbi",
+      "termsLink": "\u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5",
+      "and": "v\u00e0",
+      "privacyLink": "Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt",
+      "submit": "T\u1ea1o t\u00e0i kho\u1ea3n",
+      "hasAccount": "\u0110\u00e3 c\u00f3 t\u00e0i kho\u1ea3n?",
+      "signIn": "\u0110\u0103ng nh\u1eadp",
+      "success": "\u0110\u0103ng k\u00fd th\u00e0nh c\u00f4ng! Vui l\u00f2ng ki\u1ec3m tra email \u0111\u1ec3 x\u00e1c minh t\u00e0i kho\u1ea3n.",
+      "duplicateEmail": "T\u00e0i kho\u1ea3n v\u1edbi th\u00f4ng tin n\u00e0y c\u00f3 th\u1ec3 \u0111\u00e3 t\u1ed3n t\u1ea1i. Vui l\u00f2ng th\u1eed \u0111\u0103ng nh\u1eadp ho\u1eb7c s\u1eed d\u1ee5ng email kh\u00e1c."
+    },
+    "forgotPassword": {
+      "title": "Qu\u00ean m\u1eadt kh\u1ea9u",
+      "subtitle": "Nh\u1eadp email c\u1ee7a b\u1ea1n v\u00e0 ch\u00fang t\u00f4i s\u1ebd g\u1eedi li\u00ean k\u1ebft \u0111\u1eb7t l\u1ea1i",
+      "email": "\u0110\u1ecba ch\u1ec9 email",
+      "submit": "G\u1eedi li\u00ean k\u1ebft \u0111\u1eb7t l\u1ea1i",
+      "success": "N\u1ebfu t\u00e0i kho\u1ea3n t\u1ed3n t\u1ea1i v\u1edbi email \u0111\u00f3, ch\u00fang t\u00f4i \u0111\u00e3 g\u1eedi li\u00ean k\u1ebft \u0111\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u.",
+      "backToLogin": "Quay l\u1ea1i \u0111\u0103ng nh\u1eadp"
+    },
+    "resetPassword": {
+      "title": "\u0110\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u",
+      "subtitle": "Nh\u1eadp m\u1eadt kh\u1ea9u m\u1edbi c\u1ee7a b\u1ea1n",
+      "password": "M\u1eadt kh\u1ea9u m\u1edbi",
+      "confirmPassword": "X\u00e1c nh\u1eadn m\u1eadt kh\u1ea9u m\u1edbi",
+      "submit": "\u0110\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u",
+      "success": "\u0110\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u th\u00e0nh c\u00f4ng! B\u1ea1n c\u00f3 th\u1ec3 \u0111\u0103ng nh\u1eadp ngay.",
+      "invalidToken": "Li\u00ean k\u1ebft \u0111\u1eb7t l\u1ea1i kh\u00f4ng h\u1ee3p l\u1ec7 ho\u1eb7c \u0111\u00e3 h\u1ebft h\u1ea1n.",
+      "backToLogin": "Quay l\u1ea1i \u0111\u0103ng nh\u1eadp"
+    },
+    "verify": {
+      "title": "X\u00e1c minh email",
+      "verifying": "\u0110ang x\u00e1c minh email c\u1ee7a b\u1ea1n...",
+      "success": "Email \u0111\u00e3 \u0111\u01b0\u1ee3c x\u00e1c minh! B\u1ea1n c\u00f3 th\u1ec3 \u0111\u0103ng nh\u1eadp ngay.",
+      "failed": "X\u00e1c minh email th\u1ea5t b\u1ea1i. Li\u00ean k\u1ebft c\u00f3 th\u1ec3 kh\u00f4ng h\u1ee3p l\u1ec7 ho\u1eb7c \u0111\u00e3 h\u1ebft h\u1ea1n.",
+      "resend": "G\u1eedi l\u1ea1i email x\u00e1c minh",
+      "resendSuccess": "\u0110\u00e3 g\u1eedi email x\u00e1c minh! Vui l\u00f2ng ki\u1ec3m tra h\u1ed9p th\u01b0."
+    },
+    "validation": {
+      "emailRequired": "Vui l\u00f2ng nh\u1eadp email",
+      "emailInvalid": "Vui l\u00f2ng nh\u1eadp \u0111\u1ecba ch\u1ec9 email h\u1ee3p l\u1ec7",
+      "passwordRequired": "Vui l\u00f2ng nh\u1eadp m\u1eadt kh\u1ea9u",
+      "passwordMin": "M\u1eadt kh\u1ea9u ph\u1ea3i c\u00f3 \u00edt nh\u1ea5t 8 k\u00fd t\u1ef1",
+      "passwordWeak": "M\u1eadt kh\u1ea9u ph\u1ea3i ch\u1ee9a ch\u1eef hoa, ch\u1eef th\u01b0\u1eddng v\u00e0 s\u1ed1",
+      "passwordMismatch": "M\u1eadt kh\u1ea9u kh\u00f4ng kh\u1edbp",
+      "firstNameRequired": "Vui l\u00f2ng nh\u1eadp t\u00ean",
+      "lastNameRequired": "Vui l\u00f2ng nh\u1eadp h\u1ecd",
+      "termsRequired": "B\u1ea1n ph\u1ea3i ch\u1ea5p nh\u1eadn \u0111i\u1ec1u kho\u1ea3n v\u00e0 ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt"
+    },
+    "consent": {
+      "title": "Ch\u00ednh s\u00e1ch \u0111\u00e3 c\u1eadp nh\u1eadt",
+      "policyUpdated": "\u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5 v\u00e0 Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt \u0111\u00e3 \u0111\u01b0\u1ee3c c\u1eadp nh\u1eadt. Vui l\u00f2ng xem l\u1ea1i v\u00e0 ch\u1ea5p nh\u1eadn \u0111\u1ec3 ti\u1ebfp t\u1ee5c.",
+      "accept": "Ch\u1ea5p nh\u1eadn v\u00e0 ti\u1ebfp t\u1ee5c"
+    }
+  },
+  "events": {
+    "listing": {
+      "title": "S\u1ef1 ki\u1ec7n",
+      "subtitle": "Kh\u00e1m ph\u00e1 nh\u1eefng s\u1ef1 ki\u1ec7n tuy\u1ec7t v\u1eddi g\u1ea7n b\u1ea1n",
+      "searchPlaceholder": "T\u00ecm ki\u1ebfm s\u1ef1 ki\u1ec7n...",
+      "allCategories": "T\u1ea5t c\u1ea3 danh m\u1ee5c",
+      "noEvents": "Kh\u00f4ng t\u00ecm th\u1ea5y s\u1ef1 ki\u1ec7n ph\u00f9 h\u1ee3p",
+      "featuredBadge": "N\u1ed5i b\u1eadt",
+      "soldOutBadge": "H\u1ebft v\u00e9",
+      "upcomingBadge": "S\u1eafp di\u1ec5n ra",
+      "from": "T\u1eeb"
+    },
+    "details": {
+      "title": "Chi ti\u1ebft s\u1ef1 ki\u1ec7n",
+      "about": "V\u1ec1 s\u1ef1 ki\u1ec7n n\u00e0y",
+      "showtimes": "L\u1ecbch di\u1ec5n",
+      "venue": "\u0110\u1ecba \u0111i\u1ec3m",
+      "organizer": "T\u1ed5 ch\u1ee9c b\u1edfi",
+      "selectSeats": "Ch\u1ecdn gh\u1ebf",
+      "loginToBook": "\u0110\u0103ng nh\u1eadp \u0111\u1ec3 \u0111\u1eb7t v\u00e9",
+      "shareEvent": "Chia s\u1ebb s\u1ef1 ki\u1ec7n",
+      "salePending": "Ch\u01b0a m\u1edf b\u00e1n",
+      "saleOpen": "\u0110ang b\u00e1n",
+      "saleClosed": "\u0110\u00e3 \u0111\u00f3ng b\u00e1n",
+      "saleOpenAt": "M\u1edf b\u00e1n {date}",
+      "seatsAvailable": "C\u00f2n {count} gh\u1ebf",
+      "priceRange": "{min} - {max}"
+    },
+    "categories": {
+      "music": "\u00c2m nh\u1ea1c",
+      "sports": "Th\u1ec3 thao",
+      "theater": "K\u1ecbch",
+      "comedy": "H\u00e0i k\u1ecbch",
+      "arts": "Ngh\u1ec7 thu\u1eadt",
+      "technology": "C\u00f4ng ngh\u1ec7",
+      "festival": "L\u1ec5 h\u1ed9i",
+      "family": "Gia \u0111\u00ecnh",
+      "conference": "H\u1ed9i ngh\u1ecb",
+      "workshop": "H\u1ed9i th\u1ea3o",
+      "exhibition": "Tri\u1ec3n l\u00e3m"
+    }
+  },
+  "seats": {
+    "selection": {
+      "title": "Ch\u1ecdn gh\u1ebf ng\u1ed3i",
+      "subtitle": "Nh\u1ea5p v\u00e0o gh\u1ebf tr\u1ed1ng \u0111\u1ec3 ch\u1ecdn",
+      "maxSeats": "B\u1ea1n c\u00f3 th\u1ec3 ch\u1ecdn t\u1ed1i \u0111a {max} gh\u1ebf",
+      "selectedCount": "\u0110\u00e3 ch\u1ecdn {count} gh\u1ebf",
+      "totalPrice": "T\u1ed5ng: {price}",
+      "bookNow": "\u0110\u1eb7t v\u00e9 ngay",
+      "loginRequired": "Vui l\u00f2ng \u0111\u0103ng nh\u1eadp \u0111\u1ec3 \u0111\u1eb7t v\u00e9",
+      "noSelection": "Ch\u1ecdn \u00edt nh\u1ea5t m\u1ed9t gh\u1ebf \u0111\u1ec3 ti\u1ebfp t\u1ee5c"
+    },
+    "status": {
+      "available": "C\u00f2n tr\u1ed1ng",
+      "held": "\u0110ang gi\u1eef",
+      "sold": "\u0110\u00e3 b\u00e1n",
+      "blocked": "Kh\u00f4ng kh\u1ea3 d\u1ee5ng",
+      "selected": "\u0110\u00e3 ch\u1ecdn",
+      "yours": "L\u1ef1a ch\u1ecdn c\u1ee7a b\u1ea1n"
+    },
+    "map": {
+      "zoomIn": "Ph\u00f3ng to",
+      "zoomOut": "Thu nh\u1ecf",
+      "resetView": "\u0110\u1eb7t l\u1ea1i",
+      "stage": "S\u00c2N KH\u1ea4U",
+      "legend": "Ch\u00fa th\u00edch"
+    },
+    "categories": {
+      "vip": "VIP",
+      "premium": "Cao c\u1ea5p",
+      "standard": "Chu\u1ea9n",
+      "economy": "Ph\u1ed5 th\u00f4ng"
+    },
+    "tooltip": {
+      "row": "H\u00e0ng",
+      "seat": "Gh\u1ebf",
+      "category": "Lo\u1ea1i",
+      "price": "Gi\u00e1"
+    }
+  },
+  "booking": {
+    "reservation": {
+      "title": "\u0110\u1eb7t ch\u1ed7",
+      "holdExpires": "Gh\u1ebf \u0111\u01b0\u1ee3c gi\u1eef \u0111\u1ebfn",
+      "timeRemaining": "Th\u1eddi gian c\u00f2n l\u1ea1i",
+      "expired": "\u0110\u1eb7t ch\u1ed7 \u0111\u00e3 h\u1ebft h\u1ea1n",
+      "expiredMessage": "C\u00e1c gh\u1ebf b\u1ea1n ch\u1ecdn \u0111\u00e3 \u0111\u01b0\u1ee3c nh\u1ea3. Vui l\u00f2ng quay l\u1ea1i v\u00e0 ch\u1ecdn l\u1ea1i.",
+      "backToSeats": "Quay l\u1ea1i ch\u1ecdn gh\u1ebf"
+    },
+    "checkout": {
+      "title": "T\u00f3m t\u1eaft \u0111\u01a1n h\u00e0ng",
+      "event": "S\u1ef1 ki\u1ec7n",
+      "showtime": "Su\u1ea5t di\u1ec5n",
+      "seats": "Gh\u1ebf ng\u1ed3i",
+      "subtotal": "T\u1ea1m t\u00ednh",
+      "serviceFee": "Ph\u00ed d\u1ecbch v\u1ee5",
+      "total": "T\u1ed5ng c\u1ed9ng",
+      "payNow": "Thanh to\u00e1n ngay",
+      "payAgain": "Thanh to\u00e1n l\u1ea1i",
+      "processingPayment": "\u0110ang x\u1eed l\u00fd thanh to\u00e1n..."
+    },
+    "countdown": {
+      "title": "Th\u1eddi gian ho\u00e0n t\u1ea5t thanh to\u00e1n",
+      "expired": "H\u1ebft th\u1eddi gian thanh to\u00e1n",
+      "expiredMessage": "\u0110\u01a1n h\u00e0ng \u0111\u00e3 b\u1ecb h\u1ee7y v\u00ec kh\u00f4ng thanh to\u00e1n k\u1ecbp th\u1eddi."
+    }
+  },
+  "payment": {
+    "processing": {
+      "title": "\u0110ang x\u1eed l\u00fd thanh to\u00e1n",
+      "message": "Vui l\u00f2ng ch\u1edd trong khi ch\u00fang t\u00f4i x\u1eed l\u00fd thanh to\u00e1n...",
+      "redirecting": "\u0110ang chuy\u1ec3n h\u01b0\u1edbng \u0111\u1ebfn c\u1ed5ng thanh to\u00e1n...",
+      "doNotClose": "Vui l\u00f2ng kh\u00f4ng \u0111\u00f3ng c\u1eeda s\u1ed5 n\u00e0y"
+    },
+    "success": {
+      "title": "Thanh to\u00e1n th\u00e0nh c\u00f4ng!",
+      "message": "V\u00e9 c\u1ee7a b\u1ea1n \u0111\u00e3 \u0111\u01b0\u1ee3c x\u00e1c nh\u1eadn.",
+      "viewTickets": "Xem v\u00e9 c\u1ee7a t\u00f4i",
+      "orderNumber": "\u0110\u01a1n h\u00e0ng #{id}"
+    },
+    "failure": {
+      "title": "Thanh to\u00e1n th\u1ea5t b\u1ea1i",
+      "message": "Kh\u00f4ng th\u1ec3 x\u1eed l\u00fd thanh to\u00e1n.",
+      "tryAgain": "Th\u1eed l\u1ea1i",
+      "contactSupport": "N\u1ebfu v\u1ea5n \u0111\u1ec1 ti\u1ebfp di\u1ec5n, vui l\u00f2ng li\u00ean h\u1ec7 h\u1ed7 tr\u1ee3."
+    },
+    "pending": {
+      "title": "\u0110ang x\u00e1c nh\u1eadn thanh to\u00e1n",
+      "message": "Ch\u00fang t\u00f4i \u0111ang x\u00e1c nh\u1eadn thanh to\u00e1n v\u1edbi nh\u00e0 cung c\u1ea5p...",
+      "checking": "\u0110ang ki\u1ec3m tra..."
+    },
+    "methods": {
+      "title": "Ph\u01b0\u01a1ng th\u1ee9c thanh to\u00e1n",
+      "vnpay": "VNPay",
+      "momo": "MoMo",
+      "zalopay": "ZaloPay",
+      "bankTransfer": "Chuy\u1ec3n kho\u1ea3n"
+    },
+    "form": {
+      "cardNumber": "S\u1ed1 th\u1ebb",
+      "expiry": "Ng\u00e0y h\u1ebft h\u1ea1n",
+      "cvv": "CVV",
+      "nameOnCard": "T\u00ean tr\u00ean th\u1ebb"
+    }
+  },
+  "tickets": {
+    "title": "V\u00e9 c\u1ee7a t\u00f4i",
+    "upcoming": "S\u1eafp t\u1edbi",
+    "past": "\u0110\u00e3 qua",
+    "noTickets": "B\u1ea1n ch\u01b0a c\u00f3 v\u00e9 n\u00e0o",
+    "browseEvents": "Xem s\u1ef1 ki\u1ec7n",
+    "display": {
+      "event": "S\u1ef1 ki\u1ec7n",
+      "date": "Ng\u00e0y",
+      "venue": "\u0110\u1ecba \u0111i\u1ec3m",
+      "seat": "Gh\u1ebf",
+      "row": "H\u00e0ng",
+      "gate": "C\u1ed5ng",
+      "orderNumber": "\u0110\u01a1n h\u00e0ng #",
+      "ticketId": "M\u00e3 v\u00e9"
+    },
+    "qrCode": {
+      "title": "M\u00e3 QR",
+      "scanMessage": "Xu\u1ea5t tr\u00ecnh m\u00e3 QR n\u00e0y t\u1ea1i c\u1ed5ng v\u00e0o",
+      "download": "T\u1ea3i m\u00e3 QR"
+    },
+    "status": {
+      "valid": "H\u1ee3p l\u1ec7",
+      "used": "\u0110\u00e3 s\u1eed d\u1ee5ng",
+      "cancelled": "\u0110\u00e3 h\u1ee7y",
+      "expired": "H\u1ebft h\u1ea1n",
+      "refunded": "\u0110\u00e3 ho\u00e0n ti\u1ec1n"
+    },
+    "cancel": {
+      "button": "H\u1ee7y v\u00e9",
+      "title": "H\u1ee7y v\u00e9",
+      "confirm": "B\u1ea1n c\u00f3 ch\u1eafc ch\u1eafn mu\u1ed1n h\u1ee7y v\u00e9 n\u00e0y kh\u00f4ng?",
+      "refundPolicy": "Ch\u00ednh s\u00e1ch ho\u00e0n ti\u1ec1n",
+      "refundAmount": "S\u1ed1 ti\u1ec1n ho\u00e0n l\u1ea1i",
+      "refundPercent": "Ho\u00e0n {percent}%",
+      "noRefund": "Kh\u00f4ng ho\u00e0n ti\u1ec1n (d\u01b0\u1edbi 24h tr\u01b0\u1edbc s\u1ef1 ki\u1ec7n)",
+      "halfRefund": "Ho\u00e0n 50% (24-48h tr\u01b0\u1edbc s\u1ef1 ki\u1ec7n)",
+      "fullRefund": "Ho\u00e0n 100% (tr\u00ean 48h tr\u01b0\u1edbc s\u1ef1 ki\u1ec7n)",
+      "processing": "\u0110ang h\u1ee7y...",
+      "success": "H\u1ee7y v\u00e9 th\u00e0nh c\u00f4ng",
+      "error": "H\u1ee7y v\u00e9 th\u1ea5t b\u1ea1i",
+      "confirmButton": "X\u00e1c nh\u1eadn h\u1ee7y",
+      "cancelButton": "Gi\u1eef v\u00e9"
+    }
+  },
+  "orders": {
+    "title": "L\u1ecbch s\u1eed \u0111\u01a1n h\u00e0ng",
+    "noOrders": "Ch\u01b0a c\u00f3 \u0111\u01a1n h\u00e0ng",
+    "details": {
+      "title": "Chi ti\u1ebft \u0111\u01a1n h\u00e0ng",
+      "orderNumber": "\u0110\u01a1n h\u00e0ng #{id}",
+      "date": "Ng\u00e0y \u0111\u1eb7t",
+      "items": "S\u1ea3n ph\u1ea9m",
+      "payment": "Thanh to\u00e1n",
+      "refund": "Y\u00eau c\u1ea7u ho\u00e0n ti\u1ec1n"
+    },
+    "status": {
+      "pending": "Ch\u1edd thanh to\u00e1n",
+      "paid": "\u0110\u00e3 thanh to\u00e1n",
+      "cancelled": "\u0110\u00e3 h\u1ee7y",
+      "refunded": "\u0110\u00e3 ho\u00e0n ti\u1ec1n",
+      "expired": "H\u1ebft h\u1ea1n",
+      "failed": "Th\u1ea5t b\u1ea1i"
+    },
+    "items": {
+      "seat": "Gh\u1ebf {row}{number}",
+      "category": "Lo\u1ea1i: {category}",
+      "price": "Gi\u00e1"
+    }
+  },
+  "scanner": {
+    "title": "Qu\u00e9t v\u00e9",
+    "selectShowtime": "Ch\u1ecdn su\u1ea5t di\u1ec5n",
+    "selectGate": "Ch\u1ecdn c\u1ed5ng",
+    "startScanning": "B\u1eaft \u0111\u1ea7u qu\u00e9t",
+    "stopScanning": "D\u1eebng qu\u00e9t",
+    "manualEntry": "Nh\u1eadp th\u1ee7 c\u00f4ng",
+    "enterTicketId": "Nh\u1eadp m\u00e3 v\u00e9 ho\u1eb7c m\u00e3 QR",
+    "scan": {
+      "ready": "S\u1eb5n s\u00e0ng qu\u00e9t",
+      "scanning": "H\u01b0\u1edbng camera v\u00e0o m\u00e3 QR",
+      "processing": "\u0110ang x\u00e1c minh v\u00e9..."
+    },
+    "result": {
+      "valid": "V\u00e9 h\u1ee3p l\u1ec7",
+      "validMessage": "Cho ph\u00e9p v\u00e0o c\u1ee7a {name}",
+      "invalid": "V\u00e9 kh\u00f4ng h\u1ee3p l\u1ec7",
+      "alreadyUsed": "V\u00e9 \u0111\u00e3 s\u1eed d\u1ee5ng",
+      "wrongShowtime": "Sai su\u1ea5t di\u1ec5n",
+      "wrongGate": "Sai c\u1ed5ng v\u00e0o",
+      "cancelled": "V\u00e9 \u0111\u00e3 h\u1ee7y",
+      "notFound": "Kh\u00f4ng t\u00ecm th\u1ea5y v\u00e9"
+    },
+    "offline": {
+      "indicator": "Ch\u1ebf \u0111\u1ed9 ngo\u1ea1i tuy\u1ebfn",
+      "message": "C\u00e1c l\u1ea7n qu\u00e9t s\u1ebd \u0111\u01b0\u1ee3c \u0111\u1ed3ng b\u1ed9 khi c\u00f3 k\u1ebft n\u1ed1i",
+      "pendingSync": "{count} l\u1ea7n qu\u00e9t ch\u1edd \u0111\u1ed3ng b\u1ed9",
+      "syncNow": "\u0110\u1ed3ng b\u1ed9 ngay",
+      "downloadList": "T\u1ea3i danh s\u00e1ch v\u00e9",
+      "lastSync": "L\u1ea7n \u0111\u1ed3ng b\u1ed9 cu\u1ed1i: {time}"
+    },
+    "override": {
+      "button": "Cho v\u00e0o \u0111\u1eb7c bi\u1ec7t",
+      "note": "Ghi ch\u00fa",
+      "notePlaceholder": "L\u00fd do cho v\u00e0o \u0111\u1eb7c bi\u1ec7t...",
+      "confirm": "X\u00e1c nh\u1eadn"
+    }
+  },
+  "organizer": {
+    "dashboard": {
+      "title": "B\u1ea3ng \u0111i\u1ec1u khi\u1ec3n nh\u00e0 t\u1ed5 ch\u1ee9c",
+      "totalEvents": "T\u1ed5ng s\u1ef1 ki\u1ec7n",
+      "activeEvents": "S\u1ef1 ki\u1ec7n \u0111ang di\u1ec5n ra",
+      "ticketsSold": "V\u00e9 \u0111\u00e3 b\u00e1n",
+      "totalRevenue": "T\u1ed5ng doanh thu",
+      "recentOrders": "\u0110\u01a1n h\u00e0ng g\u1ea7n \u0111\u00e2y",
+      "quickActions": "Thao t\u00e1c nhanh",
+      "createEvent": "T\u1ea1o s\u1ef1 ki\u1ec7n m\u1edbi",
+      "viewReports": "Xem b\u00e1o c\u00e1o",
+      "manageVenues": "Qu\u1ea3n l\u00fd \u0111\u1ecba \u0111i\u1ec3m"
+    },
+    "events": {
+      "title": "S\u1ef1 ki\u1ec7n c\u1ee7a t\u00f4i",
+      "create": "T\u1ea1o s\u1ef1 ki\u1ec7n",
+      "edit": "S\u1eeda s\u1ef1 ki\u1ec7n",
+      "eventName": "T\u00ean s\u1ef1 ki\u1ec7n",
+      "description": "M\u00f4 t\u1ea3",
+      "category": "Danh m\u1ee5c",
+      "venue": "\u0110\u1ecba \u0111i\u1ec3m",
+      "startDate": "Ng\u00e0y b\u1eaft \u0111\u1ea7u",
+      "endDate": "Ng\u00e0y k\u1ebft th\u00fac",
+      "coverImage": "\u1ea2nh b\u00eca",
+      "published": "\u0110\u00e3 xu\u1ea5t b\u1ea3n",
+      "draft": "Nh\u00e1p",
+      "publish": "Xu\u1ea5t b\u1ea3n",
+      "unpublish": "G\u1ee1 xu\u1ea5t b\u1ea3n",
+      "deleteConfirm": "B\u1ea1n c\u00f3 ch\u1eafc mu\u1ed1n x\u00f3a s\u1ef1 ki\u1ec7n n\u00e0y?",
+      "noEvents": "B\u1ea1n ch\u01b0a t\u1ea1o s\u1ef1 ki\u1ec7n n\u00e0o"
+    },
+    "showtimes": {
+      "title": "L\u1ecbch di\u1ec5n",
+      "create": "Th\u00eam su\u1ea5t di\u1ec5n",
+      "edit": "S\u1eeda su\u1ea5t di\u1ec5n",
+      "dateTime": "Ng\u00e0y gi\u1edd",
+      "saleStart": "B\u1eaft \u0111\u1ea7u b\u00e1n",
+      "saleEnd": "K\u1ebft th\u00fac b\u00e1n",
+      "openSale": "M\u1edf b\u00e1n",
+      "closeSale": "\u0110\u00f3ng b\u00e1n",
+      "clone": "Sao ch\u00e9p su\u1ea5t di\u1ec5n",
+      "seatMap": "S\u01a1 \u0111\u1ed3 gh\u1ebf",
+      "uploadSeatMap": "T\u1ea3i l\u00ean s\u01a1 \u0111\u1ed3 gh\u1ebf (JSON)",
+      "previewSeatMap": "Xem tr\u01b0\u1edbc s\u01a1 \u0111\u1ed3 gh\u1ebf",
+      "pricing": "Gi\u00e1 theo lo\u1ea1i",
+      "setPrice": "\u0110\u1eb7t gi\u00e1",
+      "noShowtimes": "Ch\u01b0a c\u00f3 su\u1ea5t di\u1ec5n"
+    },
+    "venues": {
+      "title": "\u0110\u1ecba \u0111i\u1ec3m",
+      "create": "Th\u00eam \u0111\u1ecba \u0111i\u1ec3m",
+      "edit": "S\u1eeda \u0111\u1ecba \u0111i\u1ec3m",
+      "name": "T\u00ean \u0111\u1ecba \u0111i\u1ec3m",
+      "address": "\u0110\u1ecba ch\u1ec9",
+      "city": "Th\u00e0nh ph\u1ed1",
+      "capacity": "S\u1ee9c ch\u1ee9a",
+      "seatMapTemplate": "M\u1eabu s\u01a1 \u0111\u1ed3 gh\u1ebf",
+      "noVenues": "Ch\u01b0a c\u00f3 \u0111\u1ecba \u0111i\u1ec3m"
+    },
+    "reports": {
+      "title": "B\u00e1o c\u00e1o",
+      "revenue": "B\u00e1o c\u00e1o doanh thu",
+      "tickets": "V\u00e9 \u0111\u00e3 b\u00e1n",
+      "attendance": "\u0110i\u1ec3m danh",
+      "dateRange": "Kho\u1ea3ng th\u1eddi gian",
+      "exportCsv": "Xu\u1ea5t CSV",
+      "exportPdf": "Xu\u1ea5t PDF"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "B\u1ea3ng \u0111i\u1ec1u khi\u1ec3n qu\u1ea3n tr\u1ecb",
+      "totalUsers": "T\u1ed5ng ng\u01b0\u1eddi d\u00f9ng",
+      "totalEvents": "T\u1ed5ng s\u1ef1 ki\u1ec7n",
+      "totalOrders": "T\u1ed5ng \u0111\u01a1n h\u00e0ng",
+      "totalRevenue": "T\u1ed5ng doanh thu",
+      "recentActivity": "Ho\u1ea1t \u0111\u1ed9ng g\u1ea7n \u0111\u00e2y",
+      "systemHealth": "T\u00ecnh tr\u1ea1ng h\u1ec7 th\u1ed1ng"
+    },
+    "users": {
+      "title": "Qu\u1ea3n l\u00fd ng\u01b0\u1eddi d\u00f9ng",
+      "search": "T\u00ecm ki\u1ebfm ng\u01b0\u1eddi d\u00f9ng...",
+      "name": "T\u00ean",
+      "email": "Email",
+      "role": "Vai tr\u00f2",
+      "status": "Tr\u1ea1ng th\u00e1i",
+      "joined": "Ng\u00e0y tham gia",
+      "actions": "Thao t\u00e1c",
+      "changeRole": "\u0110\u1ed5i vai tr\u00f2",
+      "suspend": "\u0110\u00ecnh ch\u1ec9",
+      "activate": "K\u00edch ho\u1ea1t",
+      "noUsers": "Kh\u00f4ng t\u00ecm th\u1ea5y ng\u01b0\u1eddi d\u00f9ng"
+    },
+    "settings": {
+      "title": "C\u00e0i \u0111\u1eb7t h\u1ec7 th\u1ed1ng",
+      "general": "Chung",
+      "payment": "Thanh to\u00e1n",
+      "email": "Email",
+      "security": "B\u1ea3o m\u1eadt"
+    },
+    "audit": {
+      "title": "Nh\u1eadt k\u00fd h\u1ec7 th\u1ed1ng",
+      "timestamp": "Th\u1eddi gian",
+      "user": "Ng\u01b0\u1eddi d\u00f9ng",
+      "action": "H\u00e0nh \u0111\u1ed9ng",
+      "resource": "T\u00e0i nguy\u00ean",
+      "details": "Chi ti\u1ebft",
+      "ipAddress": "\u0110\u1ecba ch\u1ec9 IP",
+      "noLogs": "Kh\u00f4ng c\u00f3 nh\u1eadt k\u00fd",
+      "filter": "L\u1ecdc nh\u1eadt k\u00fd",
+      "dateRange": "Kho\u1ea3ng th\u1eddi gian",
+      "actionType": "Lo\u1ea1i h\u00e0nh \u0111\u1ed9ng"
+    }
+  },
+  "refunds": {
+    "request": {
+      "title": "Y\u00eau c\u1ea7u ho\u00e0n ti\u1ec1n",
+      "reason": "L\u00fd do ho\u00e0n ti\u1ec1n",
+      "reasonPlaceholder": "Vui l\u00f2ng gi\u1ea3i th\u00edch l\u00fd do b\u1ea1n mu\u1ed1n ho\u00e0n ti\u1ec1n...",
+      "submit": "G\u1eedi y\u00eau c\u1ea7u ho\u00e0n ti\u1ec1n",
+      "success": "Y\u00eau c\u1ea7u ho\u00e0n ti\u1ec1n \u0111\u00e3 \u0111\u01b0\u1ee3c g\u1eedi th\u00e0nh c\u00f4ng"
+    },
+    "status": {
+      "pending": "Ch\u1edd duy\u1ec7t",
+      "approved": "\u0110\u00e3 duy\u1ec7t",
+      "rejected": "B\u1ecb t\u1eeb ch\u1ed1i",
+      "processed": "\u0110\u00e3 x\u1eed l\u00fd",
+      "amount": "S\u1ed1 ti\u1ec1n ho\u00e0n"
+    },
+    "policy": {
+      "title": "Ch\u00ednh s\u00e1ch ho\u00e0n ti\u1ec1n",
+      "description": "Ho\u00e0n ti\u1ec1n c\u00f3 th\u1ec3 \u0111\u01b0\u1ee3c th\u1ef1c hi\u1ec7n tr\u01b0\u1edbc 48 gi\u1edd so v\u1edbi s\u1ef1 ki\u1ec7n. C\u00f3 th\u1ec3 \u00e1p d\u1ee5ng ph\u00ed x\u1eed l\u00fd.",
+      "eligible": "\u0110\u1ee7 \u0111i\u1ec1u ki\u1ec7n ho\u00e0n ti\u1ec1n",
+      "notEligible": "Kh\u00f4ng \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n ho\u00e0n ti\u1ec1n",
+      "deadline": "H\u1ea1n ho\u00e0n ti\u1ec1n: {date}"
+    }
+  },
+  "errors": {
+    "validation": {
+      "required": "Tr\u01b0\u1eddng n\u00e0y l\u00e0 b\u1eaft bu\u1ed9c",
+      "email": "Vui l\u00f2ng nh\u1eadp email h\u1ee3p l\u1ec7",
+      "minLength": "Ph\u1ea3i c\u00f3 \u00edt nh\u1ea5t {min} k\u00fd t\u1ef1",
+      "maxLength": "Kh\u00f4ng \u0111\u01b0\u1ee3c v\u01b0\u1ee3t qu\u00e1 {max} k\u00fd t\u1ef1",
+      "numeric": "Ph\u1ea3i l\u00e0 s\u1ed1",
+      "positive": "Ph\u1ea3i l\u00e0 s\u1ed1 d\u01b0\u01a1ng",
+      "url": "Vui l\u00f2ng nh\u1eadp URL h\u1ee3p l\u1ec7",
+      "date": "Vui l\u00f2ng nh\u1eadp ng\u00e0y h\u1ee3p l\u1ec7",
+      "fileSize": "T\u1ec7p qu\u00e1 l\u1edbn (t\u1ed1i \u0111a {max})",
+      "fileType": "Lo\u1ea1i t\u1ec7p kh\u00f4ng h\u1ee3p l\u1ec7"
+    },
+    "server": {
+      "generic": "\u0110\u00e3 x\u1ea3y ra l\u1ed7i. Vui l\u00f2ng th\u1eed l\u1ea1i.",
+      "network": "L\u1ed7i m\u1ea1ng. Vui l\u00f2ng ki\u1ec3m tra k\u1ebft n\u1ed1i.",
+      "timeout": "Y\u00eau c\u1ea7u h\u1ebft th\u1eddi gian. Vui l\u00f2ng th\u1eed l\u1ea1i.",
+      "maintenance": "H\u1ec7 th\u1ed1ng \u0111ang b\u1ea3o tr\u00ec. Vui l\u00f2ng th\u1eed l\u1ea1i sau.",
+      "rateLimit": "Qu\u00e1 nhi\u1ec1u y\u00eau c\u1ea7u. Vui l\u00f2ng ch\u1edd m\u1ed9t l\u00e1t."
+    },
+    "auth": {
+      "unauthorized": "B\u1ea1n c\u1ea7n \u0111\u0103ng nh\u1eadp \u0111\u1ec3 truy c\u1eadp trang n\u00e0y",
+      "forbidden": "B\u1ea1n kh\u00f4ng c\u00f3 quy\u1ec1n truy c\u1eadp trang n\u00e0y",
+      "sessionExpired": "Phi\u00ean \u0111\u0103ng nh\u1eadp \u0111\u00e3 h\u1ebft h\u1ea1n. Vui l\u00f2ng \u0111\u0103ng nh\u1eadp l\u1ea1i.",
+      "accountLocked": "T\u00e0i kho\u1ea3n b\u1ecb kh\u00f3a t\u1ea1m th\u1eddi. Vui l\u00f2ng th\u1eed l\u1ea1i sau."
+    },
+    "booking": {
+      "seatsUnavailable": "M\u1ed9t ho\u1eb7c nhi\u1ec1u gh\u1ebf \u0111\u00e3 ch\u1ecdn kh\u00f4ng c\u00f2n tr\u1ed1ng",
+      "reservationExpired": "\u0110\u1eb7t ch\u1ed7 \u0111\u00e3 h\u1ebft h\u1ea1n",
+      "paymentFailed": "Thanh to\u00e1n th\u1ea5t b\u1ea1i",
+      "maxTickets": "T\u1ed1i \u0111a {max} v\u00e9 m\u1ed7i \u0111\u01a1n h\u00e0ng",
+      "saleClosed": "Vi\u1ec7c b\u00e1n v\u00e9 cho su\u1ea5t di\u1ec5n n\u00e0y \u0111\u00e3 \u0111\u00f3ng"
+    }
+  },
+  "notifications": {
+    "title": "Th\u00f4ng b\u00e1o",
+    "empty": "Kh\u00f4ng c\u00f3 th\u00f4ng b\u00e1o",
+    "markAllRead": "\u0110\u00e1nh d\u1ea5u t\u1ea5t c\u1ea3 \u0111\u00e3 \u0111\u1ecdc",
+    "orderConfirmed": "\u0110\u01a1n h\u00e0ng #{id} \u0111\u00e3 \u0111\u01b0\u1ee3c x\u00e1c nh\u1eadn!",
+    "paymentReceived": "\u0110\u00e3 nh\u1eadn thanh to\u00e1n cho \u0111\u01a1n h\u00e0ng #{id}",
+    "eventReminder": "Nh\u1eafc nh\u1edf: {event} b\u1eaft \u0111\u1ea7u trong {time}",
+    "refundProcessed": "Ho\u00e0n ti\u1ec1n cho \u0111\u01a1n h\u00e0ng #{id} \u0111\u00e3 \u0111\u01b0\u1ee3c x\u1eed l\u00fd",
+    "ticketCancelled": "V\u00e9 cho {event} \u0111\u00e3 b\u1ecb h\u1ee7y"
+  },
+  "footer": {
+    "tagline": "C\u1ed5ng th\u00f4ng tin s\u1ef1 ki\u1ec7n h\u00e0ng \u0111\u1ea7u Vi\u1ec7t Nam",
+    "company": {
+      "title": "C\u00f4ng ty",
+      "about": "V\u1ec1 ch\u00fang t\u00f4i",
+      "careers": "Tuy\u1ec3n d\u1ee5ng",
+      "press": "B\u00e1o ch\u00ed",
+      "blog": "Blog"
+    },
+    "support": {
+      "title": "H\u1ed7 tr\u1ee3",
+      "helpCenter": "Trung t\u00e2m tr\u1ee3 gi\u00fap",
+      "contactUs": "Li\u00ean h\u1ec7",
+      "faq": "C\u00e2u h\u1ecfi th\u01b0\u1eddng g\u1eb7p",
+      "accessibility": "Tr\u1ee3 n\u0103ng"
+    },
+    "legal": {
+      "title": "Ph\u00e1p l\u00fd",
+      "terms": "\u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5",
+      "privacy": "Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt",
+      "cookies": "Ch\u00ednh s\u00e1ch cookie",
+      "refunds": "Ch\u00ednh s\u00e1ch ho\u00e0n ti\u1ec1n"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "copyright": "M\u1ecdi quy\u1ec1n \u0111\u01b0\u1ee3c b\u1ea3o l\u01b0u."
+  },
+  "home": {
+    "hero": {
+      "title": "Kh\u00e1m ph\u00e1 & \u0110\u1eb7t v\u00e9 s\u1ef1 ki\u1ec7n tuy\u1ec7t v\u1eddi",
+      "subtitle": "T\u00ecm ki\u1ebfm h\u00f2a nh\u1ea1c, show di\u1ec5n, th\u1ec3 thao v\u00e0 nhi\u1ec1u h\u01a1n tr\u00ean kh\u1eafp Vi\u1ec7t Nam. \u0110\u1eb7t v\u00e9 ch\u1ec9 trong v\u00e0i gi\u00e2y.",
+      "searchPlaceholder": "T\u00ecm s\u1ef1 ki\u1ec7n, ngh\u1ec7 s\u0129, \u0111\u1ecba \u0111i\u1ec3m...",
+      "searchButton": "T\u00ecm ki\u1ebfm"
+    },
+    "featured": {
+      "title": "S\u1ef1 ki\u1ec7n n\u1ed5i b\u1eadt",
+      "subtitle": "\u0110\u1eebng b\u1ecf l\u1ee1 nh\u1eefng s\u1ef1 ki\u1ec7n th\u1ecbnh h\u00e0nh",
+      "viewAll": "Xem t\u1ea5t c\u1ea3 s\u1ef1 ki\u1ec7n"
+    },
+    "categories": {
+      "title": "Duy\u1ec7t theo danh m\u1ee5c",
+      "subtitle": "T\u00ecm s\u1ef1 ki\u1ec7n ph\u00f9 h\u1ee3p v\u1edbi s\u1edf th\u00edch c\u1ee7a b\u1ea1n"
+    },
+    "cta": {
+      "title": "S\u1eb5n s\u00e0ng t\u1ed5 ch\u1ee9c s\u1ef1 ki\u1ec7n c\u1ee7a b\u1ea1n?",
+      "subtitle": "Tham gia c\u00f9ng h\u00e0ng ngh\u00ecn nh\u00e0 t\u1ed5 ch\u1ee9c tin t\u01b0\u1edfng bookSys",
+      "button": "Tr\u1edf th\u00e0nh nh\u00e0 t\u1ed5 ch\u1ee9c",
+      "stats": {
+        "events": "10.000+ S\u1ef1 ki\u1ec7n",
+        "tickets": "1 tri\u1ec7u+ V\u00e9 \u0111\u00e3 b\u00e1n",
+        "organizers": "5.000+ Nh\u00e0 t\u1ed5 ch\u1ee9c",
+        "cities": "63 T\u1ec9nh th\u00e0nh"
+      }
+    }
+  },
+  "profile": {
+    "title": "T\u00e0i kho\u1ea3n c\u1ee7a t\u00f4i",
+    "editProfile": "Ch\u1ec9nh s\u1eeda h\u1ed3 s\u01a1",
+    "firstName": "T\u00ean",
+    "lastName": "H\u1ecd",
+    "email": "Email",
+    "role": "Vai tr\u00f2",
+    "joinDate": "Th\u00e0nh vi\u00ean t\u1eeb",
+    "changePassword": {
+      "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u",
+      "currentPassword": "M\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i",
+      "newPassword": "M\u1eadt kh\u1ea9u m\u1edbi",
+      "confirmPassword": "X\u00e1c nh\u1eadn m\u1eadt kh\u1ea9u m\u1edbi",
+      "submit": "C\u1eadp nh\u1eadt m\u1eadt kh\u1ea9u",
+      "success": "C\u1eadp nh\u1eadt m\u1eadt kh\u1ea9u th\u00e0nh c\u00f4ng"
+    },
+    "preferences": {
+      "title": "T\u00f9y ch\u1ecdn",
+      "language": "Ng\u00f4n ng\u1eef",
+      "notifications": "Th\u00f4ng b\u00e1o qua email"
+    },
+    "dataManagement": {
+      "title": "Qu\u1ea3n l\u00fd d\u1eef li\u1ec7u",
+      "deleteRequest": "Y\u00eau c\u1ea7u x\u00f3a d\u1eef li\u1ec7u",
+      "deleteWarning": "H\u00e0nh \u0111\u1ed9ng n\u00e0y kh\u00f4ng th\u1ec3 ho\u00e0n t\u00e1c. T\u1ea5t c\u1ea3 d\u1eef li\u1ec7u c\u1ee7a b\u1ea1n s\u1ebd b\u1ecb x\u00f3a v\u0129nh vi\u1ec5n.",
+      "deleteConfirm": "Nh\u1eadp DELETE \u0111\u1ec3 x\u00e1c nh\u1eadn",
+      "exportData": "Xu\u1ea5t d\u1eef li\u1ec7u c\u1ee7a t\u00f4i"
+    },
+    "consent": {
+      "title": "Qu\u1ea3n l\u00fd \u0111\u1ed3ng \u00fd",
+      "version": "Phi\u00ean b\u1ea3n \u0111\u1ed3ng \u00fd",
+      "agreedAt": "\u0110\u1ed3ng \u00fd ng\u00e0y",
+      "marketingStatus": "Email ti\u1ebfp th\u1ecb",
+      "withdrawn": "\u0110\u00e3 r\u00fat l\u1ea1i",
+      "marketing": "Truy\u1ec1n th\u00f4ng ti\u1ebfp th\u1ecb",
+      "analytics": "Cookie ph\u00e2n t\u00edch",
+      "thirdParty": "Chia s\u1ebb v\u1edbi b\u00ean th\u1ee9 ba",
+      "withdrawMarketing": "R\u00fat l\u1ea1i \u0111\u1ed3ng \u00fd ti\u1ebfp th\u1ecb",
+      "withdrawSuccess": "\u0110\u00e3 r\u00fat l\u1ea1i \u0111\u1ed3ng \u00fd ti\u1ebfp th\u1ecb. B\u1ea1n s\u1ebd kh\u00f4ng nh\u1eadn \u0111\u01b0\u1ee3c email ti\u1ebfp th\u1ecb n\u1eefa."
+    }
+  },
+  "waitingRoom": {
+    "title": "Ph\u00f2ng ch\u1edd",
+    "message": "B\u1ea1n \u0111ang trong h\u00e0ng \u0111\u1ee3i cho s\u1ef1 ki\u1ec7n n\u00e0y",
+    "position": "V\u1ecb tr\u00ed c\u1ee7a b\u1ea1n: #{position}",
+    "estimatedWait": "Th\u1eddi gian ch\u1edd d\u1ef1 ki\u1ebfn: {time}",
+    "peopleAhead": "{count} ng\u01b0\u1eddi ph\u00eda tr\u01b0\u1edbc",
+    "doNotRefresh": "Vui l\u00f2ng kh\u00f4ng t\u1ea3i l\u1ea1i trang",
+    "yourTurn": "\u0110\u1ebfn l\u01b0\u1ee3t b\u1ea1n! \u0110ang chuy\u1ec3n h\u01b0\u1edbng..."
+  },
+  "consent": {
+    "terms": {
+      "title": "\u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5",
+      "accept": "T\u00f4i ch\u1ea5p nh\u1eadn \u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5",
+      "required": "B\u1ea1n ph\u1ea3i ch\u1ea5p nh\u1eadn \u0111i\u1ec1u kho\u1ea3n \u0111\u1ec3 ti\u1ebfp t\u1ee5c",
+      "placeholder": "Trang n\u00e0y s\u1ebd ch\u1ee9a \u0110i\u1ec1u kho\u1ea3n d\u1ecbch v\u1ee5 \u0111\u1ea7y \u0111\u1ee7. Vui l\u00f2ng quay l\u1ea1i sau \u0111\u1ec3 xem t\u00e0i li\u1ec7u ho\u00e0n ch\u1ec9nh."
+    },
+    "privacy": {
+      "title": "Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt",
+      "accept": "T\u00f4i ch\u1ea5p nh\u1eadn Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt",
+      "required": "B\u1ea1n ph\u1ea3i ch\u1ea5p nh\u1eadn ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt \u0111\u1ec3 ti\u1ebfp t\u1ee5c",
+      "placeholder": "Trang n\u00e0y s\u1ebd ch\u1ee9a Ch\u00ednh s\u00e1ch b\u1ea3o m\u1eadt \u0111\u1ea7y \u0111\u1ee7. Vui l\u00f2ng quay l\u1ea1i sau \u0111\u1ec3 xem t\u00e0i li\u1ec7u ho\u00e0n ch\u1ec9nh."
+    },
+    "dataDeletion": {
+      "title": "Y\u00eau c\u1ea7u x\u00f3a d\u1eef li\u1ec7u",
+      "description": "B\u1ea1n c\u00f3 th\u1ec3 y\u00eau c\u1ea7u x\u00f3a ho\u00e0n to\u00e0n t\u00e0i kho\u1ea3n v\u00e0 d\u1eef li\u1ec7u li\u00ean quan.",
+      "warning": "Qu\u00e1 tr\u00ecnh n\u00e0y kh\u00f4ng th\u1ec3 ho\u00e0n t\u00e1c v\u00e0 m\u1ea5t \u0111\u1ebfn 30 ng\u00e0y \u0111\u1ec3 ho\u00e0n th\u00e0nh.",
+      "submit": "Y\u00eau c\u1ea7u x\u00f3a"
+    }
+  },
+  "reports": {
+    "revenue": {
+      "title": "B\u00e1o c\u00e1o doanh thu",
+      "totalRevenue": "T\u1ed5ng doanh thu",
+      "netRevenue": "Doanh thu r\u00f2ng",
+      "fees": "Ph\u00ed n\u1ec1n t\u1ea3ng",
+      "refunds": "Ho\u00e0n ti\u1ec1n",
+      "period": "K\u1ef3",
+      "byEvent": "Theo s\u1ef1 ki\u1ec7n",
+      "byCategory": "Theo danh m\u1ee5c",
+      "chart": "Bi\u1ec3u \u0111\u1ed3 doanh thu"
+    },
+    "reconciliation": {
+      "title": "\u0110\u1ed1i so\u00e1t thanh to\u00e1n",
+      "matched": "Kh\u1edbp",
+      "unmatched": "Kh\u00f4ng kh\u1edbp",
+      "pending": "\u0110ang ch\u1edd",
+      "total": "T\u1ed5ng giao d\u1ecbch",
+      "approve": "Duy\u1ec7t",
+      "flag": "\u0110\u00e1nh d\u1ea5u xem l\u1ea1i"
+    },
+    "entryStats": {
+      "title": "Th\u1ed1ng k\u00ea v\u00e0o c\u1eeda",
+      "totalEntries": "T\u1ed5ng l\u01b0\u1ee3t v\u00e0o",
+      "byGate": "Theo c\u1ed5ng",
+      "byTime": "Theo th\u1eddi gian",
+      "peakTime": "Gi\u1edd cao \u0111i\u1ec3m",
+      "scanRate": "T\u1ed1c \u0111\u1ed9 qu\u00e9t"
+    },
+    "exports": {
+      "title": "Xu\u1ea5t b\u00e1o c\u00e1o",
+      "format": "\u0110\u1ecbnh d\u1ea1ng",
+      "csv": "CSV",
+      "pdf": "PDF",
+      "excel": "Excel",
+      "dateRange": "Kho\u1ea3ng th\u1eddi gian",
+      "generate": "T\u1ea1o b\u00e1o c\u00e1o"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "bookSys - \u0110\u1eb7t v\u00e9 s\u1ef1 ki\u1ec7n",
+      "description": "Kh\u00e1m ph\u00e1 v\u00e0 \u0111\u1eb7t v\u00e9 cho nh\u1eefng s\u1ef1 ki\u1ec7n t\u1ed1t nh\u1ea5t t\u1ea1i Vi\u1ec7t Nam"
+    },
+    "events": {
+      "title": "S\u1ef1 ki\u1ec7n - bookSys",
+      "description": "Duy\u1ec7t s\u1ef1 ki\u1ec7n s\u1eafp t\u1edbi v\u00e0 \u0111\u1eb7t v\u00e9"
+    },
+    "login": {
+      "title": "\u0110\u0103ng nh\u1eadp - bookSys",
+      "description": "\u0110\u0103ng nh\u1eadp v\u00e0o t\u00e0i kho\u1ea3n bookSys c\u1ee7a b\u1ea1n"
+    },
+    "register": {
+      "title": "\u0110\u0103ng k\u00fd - bookSys",
+      "description": "T\u1ea1o t\u00e0i kho\u1ea3n bookSys m\u1edbi"
+    },
+    "tickets": {
+      "title": "V\u00e9 c\u1ee7a t\u00f4i - bookSys",
+      "description": "Xem v\u00e0 qu\u1ea3n l\u00fd v\u00e9 s\u1ef1 ki\u1ec7n"
+    },
+    "orders": {
+      "title": "L\u1ecbch s\u1eed \u0111\u01a1n h\u00e0ng - bookSys",
+      "description": "Xem l\u1ecbch s\u1eed \u0111\u01a1n h\u00e0ng"
+    },
+    "profile": {
+      "title": "T\u00e0i kho\u1ea3n - bookSys",
+      "description": "Qu\u1ea3n l\u00fd c\u00e0i \u0111\u1eb7t t\u00e0i kho\u1ea3n"
+    },
+    "organizer": {
+      "title": "Nh\u00e0 t\u1ed5 ch\u1ee9c - bookSys",
+      "description": "Qu\u1ea3n l\u00fd s\u1ef1 ki\u1ec7n v\u00e0 \u0111\u1ecba \u0111i\u1ec3m"
+    },
+    "scanner": {
+      "title": "Qu\u00e9t v\u00e9 - bookSys",
+      "description": "Qu\u00e9t v\u00e0 x\u00e1c minh v\u00e9 s\u1ef1 ki\u1ec7n"
+    },
+    "admin": {
+      "title": "Qu\u1ea3n tr\u1ecb - bookSys",
+      "description": "Qu\u1ea3n tr\u1ecb h\u1ec7 th\u1ed1ng"
+    },
+    "accountant": {
+      "title": "K\u1ebf to\u00e1n - bookSys",
+      "description": "Qu\u1ea3n l\u00fd t\u00e0i ch\u00ednh v\u00e0 \u0111\u1ed1i so\u00e1t"
+    }
+  }
+}

@@ -1,0 +1,814 @@
+{
+  "common": {
+    "appName": "bookSys",
+    "nav": {
+      "home": "Home",
+      "events": "Events",
+      "myTickets": "My Tickets",
+      "orders": "Orders",
+      "profile": "Profile",
+      "login": "Log In",
+      "register": "Sign Up",
+      "logout": "Log Out",
+      "dashboard": "Dashboard",
+      "manageEvents": "Manage Events",
+      "venues": "Venues",
+      "reports": "Reports",
+      "scanner": "Scanner",
+      "users": "Users",
+      "settings": "Settings",
+      "auditLog": "Audit Log",
+      "reconciliation": "Reconciliation"
+    },
+    "buttons": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "create": "Create",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "confirm": "Confirm",
+      "close": "Close",
+      "search": "Search",
+      "filter": "Filter",
+      "reset": "Reset",
+      "loadMore": "Load More",
+      "refresh": "Refresh",
+      "download": "Download",
+      "upload": "Upload",
+      "export": "Export",
+      "viewAll": "View All",
+      "viewDetails": "View Details",
+      "tryAgain": "Try Again",
+      "continue": "Continue",
+      "apply": "Apply",
+      "share": "Share"
+    },
+    "states": {
+      "loading": "Loading...",
+      "saving": "Saving...",
+      "processing": "Processing...",
+      "noResults": "No results found",
+      "empty": "Nothing here yet",
+      "error": "Something went wrong",
+      "success": "Success!",
+      "pending": "Pending",
+      "active": "Active",
+      "inactive": "Inactive",
+      "enabled": "Enabled",
+      "disabled": "Disabled"
+    },
+    "time": {
+      "now": "Just now",
+      "minutesAgo": "{count} min ago",
+      "hoursAgo": "{count}h ago",
+      "daysAgo": "{count}d ago",
+      "seconds": "seconds",
+      "minutes": "minutes",
+      "hours": "hours",
+      "days": "days"
+    },
+    "currency": {
+      "vnd": "VND",
+      "symbol": "VND"
+    },
+    "language": {
+      "en": "English",
+      "vi": "Vietnamese",
+      "switchTo": "Switch language"
+    },
+    "pagination": {
+      "showing": "Showing {from} to {to} of {total}",
+      "page": "Page {current} of {total}",
+      "perPage": "Per page"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email address",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "locked": "Your account has been temporarily locked due to too many failed attempts. Please try again later.",
+      "invalid": "Invalid email or password"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join bookSys to discover events",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "agreeTerms": "I agree to the Terms of Service and Privacy Policy",
+      "agreePrefix": "I agree to the",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "success": "Registration successful! Please check your email to verify your account.",
+      "duplicateEmail": "An account with this information may already exist. Please try logging in or use a different email."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email and we'll send you a reset link",
+      "email": "Email address",
+      "submit": "Send Reset Link",
+      "success": "If an account exists with that email, we've sent a password reset link.",
+      "backToLogin": "Back to login"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your new password",
+      "password": "New password",
+      "confirmPassword": "Confirm new password",
+      "submit": "Reset Password",
+      "success": "Password reset successfully! You can now log in.",
+      "invalidToken": "This reset link is invalid or has expired.",
+      "backToLogin": "Back to login"
+    },
+    "verify": {
+      "title": "Verify Email",
+      "verifying": "Verifying your email...",
+      "success": "Your email has been verified! You can now log in.",
+      "failed": "Email verification failed. The link may be invalid or expired.",
+      "resend": "Resend verification email",
+      "resendSuccess": "Verification email sent! Please check your inbox."
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least 8 characters",
+      "passwordWeak": "Password must contain uppercase, lowercase, and a number",
+      "passwordMismatch": "Passwords do not match",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "termsRequired": "You must accept the terms and privacy policy"
+    },
+    "consent": {
+      "title": "Updated Policies",
+      "policyUpdated": "Our Terms of Service and Privacy Policy have been updated. Please review and accept them to continue.",
+      "accept": "Accept and Continue"
+    }
+  },
+  "events": {
+    "listing": {
+      "title": "Events",
+      "subtitle": "Discover amazing events near you",
+      "searchPlaceholder": "Search events...",
+      "allCategories": "All Categories",
+      "noEvents": "No events found matching your criteria",
+      "featuredBadge": "Featured",
+      "soldOutBadge": "Sold Out",
+      "upcomingBadge": "Upcoming",
+      "from": "From"
+    },
+    "details": {
+      "title": "Event Details",
+      "about": "About This Event",
+      "showtimes": "Showtimes",
+      "venue": "Venue",
+      "organizer": "Organized by",
+      "selectSeats": "Select Seats",
+      "loginToBook": "Log in to book",
+      "shareEvent": "Share this event",
+      "salePending": "Sale not yet started",
+      "saleOpen": "On Sale",
+      "saleClosed": "Sale Closed",
+      "saleOpenAt": "Sale opens {date}",
+      "seatsAvailable": "{count} seats available",
+      "priceRange": "{min} - {max}"
+    },
+    "categories": {
+      "music": "Music",
+      "sports": "Sports",
+      "theater": "Theater",
+      "comedy": "Comedy",
+      "arts": "Arts",
+      "technology": "Technology",
+      "festival": "Festival",
+      "family": "Family",
+      "conference": "Conference",
+      "workshop": "Workshop",
+      "exhibition": "Exhibition"
+    }
+  },
+  "seats": {
+    "selection": {
+      "title": "Select Your Seats",
+      "subtitle": "Click on available seats to select them",
+      "maxSeats": "You can select up to {max} seats",
+      "selectedCount": "{count} seat(s) selected",
+      "totalPrice": "Total: {price}",
+      "bookNow": "Book Now",
+      "loginRequired": "Please log in to book seats",
+      "noSelection": "Select at least one seat to continue"
+    },
+    "status": {
+      "available": "Available",
+      "held": "Held",
+      "sold": "Sold",
+      "blocked": "Blocked",
+      "selected": "Selected",
+      "yours": "Your Selection"
+    },
+    "map": {
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "resetView": "Reset View",
+      "stage": "STAGE",
+      "legend": "Legend"
+    },
+    "categories": {
+      "vip": "VIP",
+      "premium": "Premium",
+      "standard": "Standard",
+      "economy": "Economy"
+    },
+    "tooltip": {
+      "row": "Row",
+      "seat": "Seat",
+      "category": "Category",
+      "price": "Price"
+    }
+  },
+  "booking": {
+    "reservation": {
+      "title": "Reservation",
+      "holdExpires": "Your seats are held until",
+      "timeRemaining": "Time remaining",
+      "expired": "Your reservation has expired",
+      "expiredMessage": "The seats you selected have been released. Please go back and select seats again.",
+      "backToSeats": "Back to seat selection"
+    },
+    "checkout": {
+      "title": "Order Summary",
+      "event": "Event",
+      "showtime": "Showtime",
+      "seats": "Seats",
+      "subtotal": "Subtotal",
+      "serviceFee": "Service Fee",
+      "total": "Total",
+      "payNow": "Pay Now",
+      "payAgain": "Pay Again",
+      "processingPayment": "Processing payment..."
+    },
+    "countdown": {
+      "title": "Time to Complete Payment",
+      "expired": "Payment time expired",
+      "expiredMessage": "Your order has been cancelled because payment was not completed in time."
+    }
+  },
+  "payment": {
+    "processing": {
+      "title": "Processing Payment",
+      "message": "Please wait while we process your payment...",
+      "redirecting": "Redirecting to payment gateway...",
+      "doNotClose": "Do not close this window"
+    },
+    "success": {
+      "title": "Payment Successful!",
+      "message": "Your tickets have been confirmed.",
+      "viewTickets": "View My Tickets",
+      "orderNumber": "Order #{id}"
+    },
+    "failure": {
+      "title": "Payment Failed",
+      "message": "Your payment could not be processed.",
+      "tryAgain": "Try Again",
+      "contactSupport": "If the problem persists, please contact support."
+    },
+    "pending": {
+      "title": "Confirming Payment",
+      "message": "We're confirming your payment with the payment provider...",
+      "checking": "Checking status..."
+    },
+    "methods": {
+      "title": "Payment Method",
+      "vnpay": "VNPay",
+      "momo": "MoMo",
+      "zalopay": "ZaloPay",
+      "bankTransfer": "Bank Transfer"
+    },
+    "form": {
+      "cardNumber": "Card number",
+      "expiry": "Expiry date",
+      "cvv": "CVV",
+      "nameOnCard": "Name on card"
+    }
+  },
+  "tickets": {
+    "title": "My Tickets",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "noTickets": "You don't have any tickets yet",
+    "browseEvents": "Browse Events",
+    "display": {
+      "event": "Event",
+      "date": "Date",
+      "venue": "Venue",
+      "seat": "Seat",
+      "row": "Row",
+      "gate": "Gate",
+      "orderNumber": "Order #",
+      "ticketId": "Ticket ID"
+    },
+    "qrCode": {
+      "title": "QR Code",
+      "scanMessage": "Show this QR code at the entrance",
+      "download": "Download QR Code"
+    },
+    "status": {
+      "valid": "Valid",
+      "used": "Used",
+      "cancelled": "Cancelled",
+      "expired": "Expired",
+      "refunded": "Refunded"
+    },
+    "cancel": {
+      "button": "Cancel Ticket",
+      "title": "Cancel Ticket",
+      "confirm": "Are you sure you want to cancel this ticket?",
+      "refundPolicy": "Refund Policy",
+      "refundAmount": "Refund Amount",
+      "refundPercent": "{percent}% refund",
+      "noRefund": "No refund (less than 24h before event)",
+      "halfRefund": "50% refund (24-48h before event)",
+      "fullRefund": "100% refund (more than 48h before event)",
+      "processing": "Cancelling...",
+      "success": "Ticket cancelled successfully",
+      "error": "Failed to cancel ticket",
+      "confirmButton": "Confirm Cancellation",
+      "cancelButton": "Keep Ticket"
+    }
+  },
+  "orders": {
+    "title": "Order History",
+    "noOrders": "No orders yet",
+    "details": {
+      "title": "Order Details",
+      "orderNumber": "Order #{id}",
+      "date": "Order Date",
+      "items": "Items",
+      "payment": "Payment",
+      "refund": "Request Refund"
+    },
+    "status": {
+      "pending": "Pending Payment",
+      "paid": "Paid",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded",
+      "expired": "Expired",
+      "failed": "Failed"
+    },
+    "items": {
+      "seat": "Seat {row}{number}",
+      "category": "Category: {category}",
+      "price": "Price"
+    }
+  },
+  "scanner": {
+    "title": "Ticket Scanner",
+    "selectShowtime": "Select Showtime",
+    "selectGate": "Select Gate",
+    "startScanning": "Start Scanning",
+    "stopScanning": "Stop Scanning",
+    "manualEntry": "Manual Entry",
+    "enterTicketId": "Enter ticket ID or code",
+    "scan": {
+      "ready": "Ready to scan",
+      "scanning": "Point camera at QR code",
+      "processing": "Verifying ticket..."
+    },
+    "result": {
+      "valid": "Valid Ticket",
+      "validMessage": "Entry approved for {name}",
+      "invalid": "Invalid Ticket",
+      "alreadyUsed": "Ticket Already Used",
+      "wrongShowtime": "Wrong Showtime",
+      "wrongGate": "Wrong Gate",
+      "cancelled": "Ticket Cancelled",
+      "notFound": "Ticket Not Found"
+    },
+    "offline": {
+      "indicator": "Offline Mode",
+      "message": "Scans will be synced when connection is restored",
+      "pendingSync": "{count} scan(s) pending sync",
+      "syncNow": "Sync Now",
+      "downloadList": "Download Ticket List",
+      "lastSync": "Last synced: {time}"
+    },
+    "override": {
+      "button": "Override Entry",
+      "note": "Override Note",
+      "notePlaceholder": "Reason for override...",
+      "confirm": "Confirm Override"
+    }
+  },
+  "organizer": {
+    "dashboard": {
+      "title": "Organizer Dashboard",
+      "totalEvents": "Total Events",
+      "activeEvents": "Active Events",
+      "ticketsSold": "Tickets Sold",
+      "totalRevenue": "Total Revenue",
+      "recentOrders": "Recent Orders",
+      "quickActions": "Quick Actions",
+      "createEvent": "Create New Event",
+      "viewReports": "View Reports",
+      "manageVenues": "Manage Venues"
+    },
+    "events": {
+      "title": "My Events",
+      "create": "Create Event",
+      "edit": "Edit Event",
+      "eventName": "Event Name",
+      "description": "Description",
+      "category": "Category",
+      "venue": "Venue",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "coverImage": "Cover Image",
+      "published": "Published",
+      "draft": "Draft",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "deleteConfirm": "Are you sure you want to delete this event?",
+      "noEvents": "You haven't created any events yet"
+    },
+    "showtimes": {
+      "title": "Showtimes",
+      "create": "Add Showtime",
+      "edit": "Edit Showtime",
+      "dateTime": "Date & Time",
+      "saleStart": "Sale Start",
+      "saleEnd": "Sale End",
+      "openSale": "Open Sale",
+      "closeSale": "Close Sale",
+      "clone": "Clone Showtime",
+      "seatMap": "Seat Map",
+      "uploadSeatMap": "Upload Seat Map JSON",
+      "previewSeatMap": "Preview Seat Map",
+      "pricing": "Pricing by Category",
+      "setPrice": "Set Price",
+      "noShowtimes": "No showtimes added yet"
+    },
+    "venues": {
+      "title": "Venues",
+      "create": "Add Venue",
+      "edit": "Edit Venue",
+      "name": "Venue Name",
+      "address": "Address",
+      "city": "City",
+      "capacity": "Capacity",
+      "seatMapTemplate": "Seat Map Template",
+      "noVenues": "No venues added yet"
+    },
+    "reports": {
+      "title": "Reports",
+      "revenue": "Revenue Report",
+      "tickets": "Ticket Sales",
+      "attendance": "Attendance",
+      "dateRange": "Date Range",
+      "exportCsv": "Export CSV",
+      "exportPdf": "Export PDF"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "totalUsers": "Total Users",
+      "totalEvents": "Total Events",
+      "totalOrders": "Total Orders",
+      "totalRevenue": "Total Revenue",
+      "recentActivity": "Recent Activity",
+      "systemHealth": "System Health"
+    },
+    "users": {
+      "title": "User Management",
+      "search": "Search users...",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "joined": "Joined",
+      "actions": "Actions",
+      "changeRole": "Change Role",
+      "suspend": "Suspend",
+      "activate": "Activate",
+      "noUsers": "No users found"
+    },
+    "settings": {
+      "title": "System Settings",
+      "general": "General",
+      "payment": "Payment",
+      "email": "Email",
+      "security": "Security"
+    },
+    "audit": {
+      "title": "Audit Log",
+      "timestamp": "Timestamp",
+      "user": "User",
+      "action": "Action",
+      "resource": "Resource",
+      "details": "Details",
+      "ipAddress": "IP Address",
+      "noLogs": "No audit logs found",
+      "filter": "Filter logs",
+      "dateRange": "Date Range",
+      "actionType": "Action Type"
+    }
+  },
+  "refunds": {
+    "request": {
+      "title": "Request Refund",
+      "reason": "Reason for refund",
+      "reasonPlaceholder": "Please explain why you'd like a refund...",
+      "submit": "Submit Refund Request",
+      "success": "Refund request submitted successfully"
+    },
+    "status": {
+      "pending": "Pending Review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "processed": "Processed",
+      "amount": "Refund Amount"
+    },
+    "policy": {
+      "title": "Refund Policy",
+      "description": "Refunds are available up to 48 hours before the event. A processing fee may apply.",
+      "eligible": "Eligible for refund",
+      "notEligible": "Not eligible for refund",
+      "deadline": "Refund deadline: {date}"
+    }
+  },
+  "errors": {
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email",
+      "minLength": "Must be at least {min} characters",
+      "maxLength": "Must be no more than {max} characters",
+      "numeric": "Must be a number",
+      "positive": "Must be a positive number",
+      "url": "Please enter a valid URL",
+      "date": "Please enter a valid date",
+      "fileSize": "File is too large (max {max})",
+      "fileType": "Invalid file type"
+    },
+    "server": {
+      "generic": "An unexpected error occurred. Please try again.",
+      "network": "Network error. Please check your connection.",
+      "timeout": "Request timed out. Please try again.",
+      "maintenance": "System is under maintenance. Please try again later.",
+      "rateLimit": "Too many requests. Please wait a moment."
+    },
+    "auth": {
+      "unauthorized": "You must be logged in to access this page",
+      "forbidden": "You don't have permission to access this page",
+      "sessionExpired": "Your session has expired. Please log in again.",
+      "accountLocked": "Account temporarily locked. Please try again later."
+    },
+    "booking": {
+      "seatsUnavailable": "One or more selected seats are no longer available",
+      "reservationExpired": "Your reservation has expired",
+      "paymentFailed": "Payment processing failed",
+      "maxTickets": "Maximum {max} tickets per order",
+      "saleClosed": "Ticket sales are closed for this showtime"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications",
+    "markAllRead": "Mark all as read",
+    "orderConfirmed": "Your order #{id} has been confirmed!",
+    "paymentReceived": "Payment received for order #{id}",
+    "eventReminder": "Reminder: {event} starts in {time}",
+    "refundProcessed": "Refund for order #{id} has been processed",
+    "ticketCancelled": "Ticket for {event} has been cancelled"
+  },
+  "footer": {
+    "tagline": "Your gateway to unforgettable events in Vietnam",
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "press": "Press",
+      "blog": "Blog"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Help Center",
+      "contactUs": "Contact Us",
+      "faq": "FAQ",
+      "accessibility": "Accessibility"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "refunds": "Refund Policy"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "copyright": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Discover & Book Amazing Events",
+      "subtitle": "Find concerts, shows, sports events and more across Vietnam. Book your seats in seconds.",
+      "searchPlaceholder": "Search for events, artists, venues...",
+      "searchButton": "Search"
+    },
+    "featured": {
+      "title": "Featured Events",
+      "subtitle": "Don't miss these trending events",
+      "viewAll": "View All Events"
+    },
+    "categories": {
+      "title": "Browse by Category",
+      "subtitle": "Find events that match your interests"
+    },
+    "cta": {
+      "title": "Ready to Host Your Own Event?",
+      "subtitle": "Join thousands of organizers who trust bookSys",
+      "button": "Become an Organizer",
+      "stats": {
+        "events": "10,000+ Events",
+        "tickets": "1M+ Tickets Sold",
+        "organizers": "5,000+ Organizers",
+        "cities": "63 Provinces"
+      }
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "editProfile": "Edit Profile",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "role": "Role",
+    "joinDate": "Member since",
+    "changePassword": {
+      "title": "Change Password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "submit": "Update Password",
+      "success": "Password updated successfully"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "notifications": "Email notifications"
+    },
+    "dataManagement": {
+      "title": "Data Management",
+      "deleteRequest": "Request Data Deletion",
+      "deleteWarning": "This action is irreversible. All your data will be permanently deleted.",
+      "deleteConfirm": "Type DELETE to confirm",
+      "exportData": "Export My Data"
+    },
+    "consent": {
+      "title": "Consent Management",
+      "version": "Consent version",
+      "agreedAt": "Agreed on",
+      "marketingStatus": "Marketing emails",
+      "withdrawn": "Withdrawn",
+      "marketing": "Marketing communications",
+      "analytics": "Analytics cookies",
+      "thirdParty": "Third-party sharing",
+      "withdrawMarketing": "Withdraw Marketing Consent",
+      "withdrawSuccess": "Marketing consent withdrawn. You will no longer receive marketing emails."
+    }
+  },
+  "waitingRoom": {
+    "title": "Waiting Room",
+    "message": "You're in the queue for this event",
+    "position": "Your position: #{position}",
+    "estimatedWait": "Estimated wait: {time}",
+    "peopleAhead": "{count} people ahead of you",
+    "doNotRefresh": "Please do not refresh this page",
+    "yourTurn": "It's your turn! Redirecting..."
+  },
+  "consent": {
+    "terms": {
+      "title": "Terms of Service",
+      "accept": "I accept the Terms of Service",
+      "required": "You must accept the terms to continue",
+      "placeholder": "This page will contain the full Terms of Service. Please check back later for the complete document."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "accept": "I accept the Privacy Policy",
+      "placeholder": "This page will contain the full Privacy Policy. Please check back later for the complete document.",
+      "required": "You must accept the privacy policy to continue"
+    },
+    "dataDeletion": {
+      "title": "Data Deletion Request",
+      "description": "You can request complete deletion of your account and associated data.",
+      "warning": "This process is irreversible and takes up to 30 days to complete.",
+      "submit": "Request Deletion"
+    }
+  },
+  "reports": {
+    "revenue": {
+      "title": "Revenue Report",
+      "totalRevenue": "Total Revenue",
+      "netRevenue": "Net Revenue",
+      "fees": "Platform Fees",
+      "refunds": "Refunds",
+      "period": "Period",
+      "byEvent": "By Event",
+      "byCategory": "By Category",
+      "chart": "Revenue Chart"
+    },
+    "reconciliation": {
+      "title": "Payment Reconciliation",
+      "matched": "Matched",
+      "unmatched": "Unmatched",
+      "pending": "Pending",
+      "total": "Total Transactions",
+      "approve": "Approve",
+      "flag": "Flag for Review"
+    },
+    "entryStats": {
+      "title": "Entry Statistics",
+      "totalEntries": "Total Entries",
+      "byGate": "By Gate",
+      "byTime": "By Time",
+      "peakTime": "Peak Entry Time",
+      "scanRate": "Scan Rate"
+    },
+    "exports": {
+      "title": "Export Reports",
+      "format": "Format",
+      "csv": "CSV",
+      "pdf": "PDF",
+      "excel": "Excel",
+      "dateRange": "Date Range",
+      "generate": "Generate Report"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "bookSys - Event Ticket Booking",
+      "description": "Discover and book tickets for the best events in Vietnam"
+    },
+    "events": {
+      "title": "Events - bookSys",
+      "description": "Browse upcoming events and book your tickets"
+    },
+    "login": {
+      "title": "Log In - bookSys",
+      "description": "Sign in to your bookSys account"
+    },
+    "register": {
+      "title": "Sign Up - bookSys",
+      "description": "Create a new bookSys account"
+    },
+    "tickets": {
+      "title": "My Tickets - bookSys",
+      "description": "View and manage your event tickets"
+    },
+    "orders": {
+      "title": "Order History - bookSys",
+      "description": "View your order history"
+    },
+    "profile": {
+      "title": "Profile - bookSys",
+      "description": "Manage your profile settings"
+    },
+    "organizer": {
+      "title": "Organizer Dashboard - bookSys",
+      "description": "Manage your events and venues"
+    },
+    "scanner": {
+      "title": "Ticket Scanner - bookSys",
+      "description": "Scan and verify event tickets"
+    },
+    "admin": {
+      "title": "Admin Dashboard - bookSys",
+      "description": "System administration"
+    },
+    "accountant": {
+      "title": "Accountant Dashboard - bookSys",
+      "description": "Financial management and reconciliation"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+services:
+  postgres-test:
+    image: postgres:15-alpine
+    container_name: booksys-postgres-test
+    environment:
+      POSTGRES_DB: booksys_test
+      POSTGRES_USER: booksys
+      POSTGRES_PASSWORD: booksys_test_pass
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U booksys -d booksys_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  redis-test:
+    image: redis:7-alpine
+    container_name: booksys-redis-test
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  backend-test:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: booksys-backend-test
+    depends_on:
+      postgres-test:
+        condition: service_healthy
+      redis-test:
+        condition: service_healthy
+    environment:
+      NODE_ENV: test
+      PORT: 4000
+      DATABASE_URL: postgresql://booksys:booksys_test_pass@postgres-test:5432/booksys_test?schema=public
+      REDIS_URL: redis://redis-test:6379
+      JWT_SECRET: test-jwt-secret-min-32-characters-long
+      JWT_EXPIRY: 1h
+      FRONTEND_URL: http://localhost:3000
+      TICKET_SIGNING_SECRET: test-ticket-signing-secret
+      PAYMENT_PROVIDER: mock
+      MOCK_PAYMENT_SECRET: mock-webhook-secret-test
+      HOLD_DURATION_MINUTES: "10"
+      PAYMENT_TIMEOUT_MINUTES: "15"
+    command: ["sh", "-c", "npx prisma db push --skip-generate && npx ts-node prisma/seed.ts && npm test && npm run test:e2e"]

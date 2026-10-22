@@ -1,0 +1,498 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  ORGANIZER
+  ENTRY_STAFF
+  ACCOUNTANT
+  ADMIN
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  CANCELLED
+  COMPLETED
+}
+
+enum SaleStatus {
+  DRAFT
+  ON_SALE
+  CLOSED
+}
+
+enum OrderStatus {
+  PENDING
+  AWAITING_PAYMENT
+  PAID
+  CANCELLED
+  EXPIRED
+  NEEDS_REVIEW
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  SUCCEEDED
+  FAILED
+  CANCELLED
+}
+
+enum TicketStatus {
+  ACTIVE
+  USED
+  CANCELLED
+  REFUNDED
+}
+
+enum ScanResult {
+  VALID
+  INVALID
+  ALREADY_USED
+  CANCELLED
+  WRONG_SHOWTIME
+  EXPIRED
+  NOT_FOUND
+  OFFLINE_VALID
+  CONFLICT
+}
+
+enum NotificationType {
+  EMAIL_VERIFICATION
+  PASSWORD_RESET
+  ORDER_CONFIRMATION
+  PAYMENT_SUCCESS
+  PAYMENT_FAILED
+  TICKET_DELIVERY
+  CANCELLATION
+  REFUND
+  EVENT_UPDATE
+  EVENT_REMINDER
+}
+
+enum RefundStatus {
+  PENDING
+  PROCESSING
+  SUCCEEDED
+  FAILED
+}
+
+model User {
+  id                   String    @id @default(uuid())
+  email                String    @unique
+  passwordHash         String
+  firstName            String
+  lastName             String
+  role                 Role      @default(CUSTOMER)
+  emailVerified        Boolean   @default(false)
+  emailVerifyToken     String?
+  emailVerifyExpires   DateTime?
+  passwordResetToken   String?
+  passwordResetExpires DateTime?
+  preferredLanguage    String    @default("en")
+  isActive             Boolean   @default(true)
+  lastLoginAt          DateTime?
+  loginAttempts        Int       @default(0)
+  lockedUntil          DateTime?
+  consentVersion       String?
+  consentAt            DateTime?
+  consentWithdrawnAt   DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  events         Event[]
+  seatHolds      SeatHold[]
+  orders         Order[]
+  tickets        Ticket[]
+  scanSessions   ScanSession[]
+  notifications  Notification[]
+  auditLogs      AuditLog[]
+  consentRecords ConsentRecord[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Event {
+  id            String      @id @default(uuid())
+  organizerId   String
+  organizer     User        @relation(fields: [organizerId], references: [id])
+  title         String
+  titleVi       String?
+  description   String?
+  descriptionVi String?
+  category      String?
+  imageUrl      String?
+  status        EventStatus @default(DRAFT)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  showtimes Showtime[]
+
+  @@index([organizerId])
+  @@index([status])
+}
+
+model Venue {
+  id        String   @id @default(uuid())
+  name      String
+  nameVi    String?
+  address   String
+  city      String
+  capacity  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sections  Section[]
+  showtimes Showtime[]
+}
+
+model Section {
+  id                 String   @id @default(uuid())
+  venueId            String
+  venue              Venue    @relation(fields: [venueId], references: [id])
+  name               String
+  nameVi             String?
+  sortOrder          Int      @default(0)
+  isGeneralAdmission Boolean  @default(false)
+  layoutData         Json?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  seatCategories SeatCategory[]
+  seats          Seat[]
+
+  @@index([venueId])
+}
+
+model Showtime {
+  id                    String     @id @default(uuid())
+  eventId               String
+  event                 Event      @relation(fields: [eventId], references: [id])
+  venueId               String
+  venue                 Venue      @relation(fields: [venueId], references: [id])
+  startsAt              DateTime
+  endsAt                DateTime
+  timezone              String     @default("Asia/Ho_Chi_Minh")
+  saleStatus            SaleStatus @default(DRAFT)
+  maxTicketsPerUser     Int        @default(10)
+  holdDurationMinutes   Int        @default(10)
+  paymentTimeoutMinutes Int        @default(15)
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+
+  seatCategories SeatCategory[]
+  seats          Seat[]
+  seatHolds      SeatHold[]
+  orders         Order[]
+  tickets        Ticket[]
+  scanSessions   ScanSession[]
+  waitingRoom    WaitingRoom?
+
+  @@index([eventId])
+  @@index([venueId])
+  @@index([startsAt])
+}
+
+model SeatCategory {
+  id         String   @id @default(uuid())
+  showtimeId String
+  showtime   Showtime @relation(fields: [showtimeId], references: [id])
+  sectionId  String
+  section    Section  @relation(fields: [sectionId], references: [id])
+  name       String
+  nameVi     String?
+  price      Int
+  currency   String   @default("VND")
+  color      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  seats      Seat[]
+  orderItems OrderItem[]
+
+  @@index([showtimeId])
+  @@index([sectionId])
+}
+
+model Seat {
+  id         String   @id @default(uuid())
+  showtimeId String
+  showtime   Showtime @relation(fields: [showtimeId], references: [id])
+  sectionId  String
+  section    Section  @relation(fields: [sectionId], references: [id])
+  categoryId String
+  category   SeatCategory @relation(fields: [categoryId], references: [id])
+  row        String
+  number     String
+  label      String
+  x          Float    @default(0)
+  y          Float    @default(0)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+
+  seatHolds  SeatHold[]
+  orderItems OrderItem[]
+  tickets    Ticket[]
+
+  @@unique([showtimeId, row, number])
+  @@index([showtimeId])
+  @@index([categoryId])
+}
+
+model SeatHold {
+  id         String   @id @default(uuid())
+  seatId     String
+  seat       Seat     @relation(fields: [seatId], references: [id])
+  showtimeId String
+  showtime   Showtime @relation(fields: [showtimeId], references: [id])
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+
+  @@unique([seatId, showtimeId])
+  @@index([expiresAt])
+  @@index([userId, showtimeId])
+}
+
+model Order {
+  id               String      @id @default(uuid())
+  orderNumber      String      @unique
+  userId           String
+  user             User        @relation(fields: [userId], references: [id])
+  showtimeId       String
+  showtime         Showtime    @relation(fields: [showtimeId], references: [id])
+  status           OrderStatus @default(PENDING)
+  totalAmount      Int
+  currency         String      @default("VND")
+  paymentTimeoutAt DateTime?
+  paidAt           DateTime?
+  cancelledAt      DateTime?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  orderItems      OrderItem[]
+  paymentAttempts PaymentAttempt[]
+  tickets         Ticket[]
+  refunds         Refund[]
+
+  @@index([userId])
+  @@index([showtimeId])
+  @@index([status])
+  @@index([orderNumber])
+}
+
+model OrderItem {
+  id         String       @id @default(uuid())
+  orderId    String
+  order      Order        @relation(fields: [orderId], references: [id])
+  seatId     String
+  seat       Seat         @relation(fields: [seatId], references: [id])
+  categoryId String
+  category   SeatCategory @relation(fields: [categoryId], references: [id])
+  seatLabel  String
+  unitPrice  Int
+  currency   String       @default("VND")
+  createdAt  DateTime     @default(now())
+
+  @@index([orderId])
+}
+
+model PaymentAttempt {
+  id             String        @id @default(uuid())
+  orderId        String
+  order          Order         @relation(fields: [orderId], references: [id])
+  providerName   String
+  providerTxnId  String?
+  amount         Int
+  currency       String        @default("VND")
+  status         PaymentStatus @default(PENDING)
+  providerData   Json?
+  idempotencyKey String        @unique
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  webhookEvents WebhookEvent[]
+
+  @@index([orderId])
+  @@index([providerTxnId])
+}
+
+model WebhookEvent {
+  id               String          @id @default(uuid())
+  paymentAttemptId String?
+  paymentAttempt   PaymentAttempt? @relation(fields: [paymentAttemptId], references: [id])
+  providerName     String
+  eventType        String
+  payload          Json
+  rawBody          String
+  signature        String?
+  processed        Boolean         @default(false)
+  processedAt      DateTime?
+  idempotencyKey   String          @unique
+  sourceIp         String?
+  createdAt        DateTime        @default(now())
+
+  @@index([idempotencyKey])
+  @@index([processed])
+}
+
+model Ticket {
+  id          String       @id @default(uuid())
+  ticketCode  String       @unique
+  orderId     String
+  order       Order        @relation(fields: [orderId], references: [id])
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  showtimeId  String
+  showtime    Showtime     @relation(fields: [showtimeId], references: [id])
+  seatId      String
+  seat        Seat         @relation(fields: [seatId], references: [id])
+  seatLabel   String
+  status      TicketStatus @default(ACTIVE)
+  qrPayload   String
+  qrSignature String
+  issuedAt    DateTime     @default(now())
+  usedAt      DateTime?
+  cancelledAt DateTime?
+  createdAt   DateTime     @default(now())
+
+  entryScans EntryScan[]
+
+  @@index([orderId])
+  @@index([userId])
+  @@index([showtimeId])
+  @@index([ticketCode])
+}
+
+model EntryScan {
+  id             String      @id @default(uuid())
+  ticketId       String?
+  ticket         Ticket?     @relation(fields: [ticketId], references: [id])
+  scannedCode    String
+  result         ScanResult
+  scanSessionId  String?
+  scanSession    ScanSession? @relation(fields: [scanSessionId], references: [id])
+  gate           String?
+  scannedAt      DateTime    @default(now())
+  isOffline      Boolean     @default(false)
+  syncedAt       DateTime?
+  deviceId       String?
+  offlineScanId  String?     @unique
+  note           String?
+  staffNote      String?
+  overrideBy     String?
+
+  @@index([ticketId])
+  @@index([scanSessionId])
+  @@index([scannedAt])
+}
+
+model ScanSession {
+  id         String      @id @default(uuid())
+  staffId    String
+  staff      User        @relation(fields: [staffId], references: [id])
+  showtimeId String
+  showtime   Showtime    @relation(fields: [showtimeId], references: [id])
+  gate       String
+  deviceId   String
+  isActive   Boolean     @default(true)
+  startedAt  DateTime    @default(now())
+  endedAt    DateTime?
+
+  entryScans EntryScan[]
+
+  @@index([staffId])
+  @@index([showtimeId])
+}
+
+model Notification {
+  id             String           @id @default(uuid())
+  userId         String
+  user           User             @relation(fields: [userId], references: [id])
+  type           NotificationType
+  subject        String
+  body           String
+  language       String           @default("en")
+  channel        String           @default("EMAIL")
+  sentAt         DateTime?
+  readAt         DateTime?
+  retryCount     Int              @default(0)
+  lastError      String?
+  idempotencyKey String           @unique
+  createdAt      DateTime         @default(now())
+
+  @@index([userId])
+  @@index([type])
+}
+
+model AuditLog {
+  id            String   @id @default(uuid())
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id])
+  action        String
+  entityType    String
+  entityId      String?
+  previousState Json?
+  newState      Json?
+  details       Json?
+  ipAddress     String?
+  userAgent     String?
+  createdAt     DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Refund {
+  id               String       @id @default(uuid())
+  orderId          String
+  order            Order        @relation(fields: [orderId], references: [id])
+  ticketId         String?
+  amount           Int
+  currency         String       @default("VND")
+  reason           String?
+  status           RefundStatus @default(PENDING)
+  providerRefundId String?
+  idempotencyKey   String       @unique
+  requestedBy      String?
+  requestedAt      DateTime     @default(now())
+  processedAt      DateTime?
+  retryCount       Int          @default(0)
+  lastError        String?
+
+  @@index([orderId])
+  @@index([status])
+}
+
+model WaitingRoom {
+  id            String   @id @default(uuid())
+  showtimeId    String   @unique
+  showtime      Showtime @relation(fields: [showtimeId], references: [id])
+  isActive      Boolean  @default(false)
+  maxConcurrent Int      @default(100)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ConsentRecord {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  version     String
+  consentType String
+  grantedAt   DateTime  @default(now())
+  withdrawnAt DateTime?
+  ipAddress   String?
+
+  @@index([userId])
+}
